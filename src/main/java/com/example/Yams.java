@@ -1,6 +1,6 @@
 package com.example;
 
-import java.util.List;
+import java.util.*;
 
 public class Yams {
 
@@ -12,6 +12,30 @@ public class Yams {
             return 50;
         }
 
+        Map<Integer, Integer> occurrences = Yams.getOccurrences(rolls);
+
+        int maxNumberOfOccurrences = Collections.max(occurrences.values());
+
+        if (maxNumberOfOccurrences == 4) {
+            return 35;
+        }
+
         return rolls.stream().mapToInt(Integer::intValue).sum();
+    }
+
+    private static Map<Integer, Integer> getOccurrences(List<Integer> rolls) {
+        Map<Integer, Integer> occurrences = new HashMap<>();
+
+        for (int roll : rolls) {
+            occurrences.compute(roll, (rollValue, numberOfOccurrences) -> {
+                if (numberOfOccurrences == null) {
+                    return 1;
+                }
+
+                return numberOfOccurrences + 1;
+            });
+        }
+
+        return occurrences;
     }
 }
