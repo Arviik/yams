@@ -12,6 +12,10 @@ public class Yams {
             return 50;
         }
 
+        if (rolls.stream().distinct().count() == 5) {
+            return 40;
+        }
+
         Map<Integer, Integer> occurrences = Yams.getOccurrences(rolls);
 
         int maxNumberOfOccurrences = Collections.max(occurrences.values());
@@ -27,6 +31,8 @@ public class Yams {
         if (maxNumberOfOccurrences == 3) {
             return 28;
         }
+
+
 
         return rolls.stream().mapToInt(Integer::intValue).sum();
     }

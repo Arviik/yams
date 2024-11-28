@@ -52,4 +52,12 @@ class YamsTest {
         assertEquals(30, Yams.getScore(List.of(6, 4, 6, 4, 6)));
     }
 
+    @Test
+    void testGrandeSuite() {
+        assertEquals(40, Yams.getScore(List.of(1, 2, 3, 4, 5)));
+        assertEquals(40, Yams.getScore(List.of(5, 4, 3, 2, 1)));
+        assertEquals(40, Yams.getScore(List.of(1, 3, 2, 5, 4)));
+        assertEquals(40, Yams.getScore(List.of(4, 5, 2, 3, 1)));
+    }
+
 }
