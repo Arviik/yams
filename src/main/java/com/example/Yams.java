@@ -20,6 +20,10 @@ public class Yams {
             return 35;
         }
 
+        if (maxNumberOfOccurrences == 3 && occurrences.containsValue(2)) {
+            return 30;
+        }
+
         if (maxNumberOfOccurrences == 3) {
             return 28;
         }
