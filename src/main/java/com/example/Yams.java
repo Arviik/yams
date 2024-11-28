@@ -20,6 +20,10 @@ public class Yams {
             return 35;
         }
 
+        if (maxNumberOfOccurrences == 3) {
+            return 28;
+        }
+
         return rolls.stream().mapToInt(Integer::intValue).sum();
     }
 
